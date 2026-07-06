@@ -1,0 +1,50 @@
+version: "3.9"
+
+services:
+  redis:
+    image: redis:7.4-alpine
+    container_name: jobboard-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes:
+      - redis-data:/data
+    networks:
+      - jobboard-net
+
+  redis-commander:
+    image: rediscommander/redis-commander:latest
+    container_name: jobboard-redis-commander
+    restart: unless-stopped
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
+    depends_on:
+      - redis
+    networks:
+      - jobboard-net
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jobboard-api
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+      - Redis__Configuration=redis:6379,abortConnect=false
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis
+    networks:
+      - jobboard-net
+
+volumes:
+  redis-data:
+
+networks:
+  jobboard-net:
+    driver: bridge
