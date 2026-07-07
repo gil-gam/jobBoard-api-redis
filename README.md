@@ -1,4 +1,4 @@
-# 🚀 JobBoardApi - Redis-Powered Job Marketplace
+# JobBoardApi - Redis-Powered Job Marketplace
 
 [![.NET](https://img.shields.io/badge/.NET-10.0-512BD4?style=flat-square&logo=dotnet)](https://dotnet.microsoft.com/)
 [![Redis](https://img.shields.io/badge/Redis-7.4-DC382D?style=flat-square&logo=redis)](https://redis.io/)
@@ -10,7 +10,7 @@ A **high-performance job marketplace API** built with .NET 10, showcasing advanc
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Features](#features)
 - [Redis Architecture](#redis-architecture)
@@ -26,7 +26,7 @@ A **high-performance job marketplace API** built with .NET 10, showcasing advanc
 
 ---
 
-## ✨ Features
+## Features
 
 ### Core Features
 - 🔴 **Redis Caching** - Intelligent caching layer for job listings with TTL management
@@ -46,7 +46,7 @@ A **high-performance job marketplace API** built with .NET 10, showcasing advanc
 
 ---
 
-## 🔴 Redis Architecture
+## Redis Architecture
 
 ### Data Model
 
@@ -89,7 +89,7 @@ DEL jobs:cache:{jobId}
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - [Docker Desktop](https://www.docker.com/products/docker-desktop) (Windows/Mac) or [Docker CLI](https://docs.docker.com/engine/install/) (Linux)
@@ -119,7 +119,7 @@ curl http://localhost:8080/api/v1/jobs
 
 ---
 
-## 📦 Installation Guide
+## Installation Guide
 
 ### Option 1: Docker Compose (Recommended) 🐳
 
@@ -299,7 +299,7 @@ docker run -d \
 
 ---
 
-## 🔗 API Endpoints
+## API Endpoints
 
 ### Base URL
 - **Local**: `http://localhost:5058` (dotnet run)
@@ -394,7 +394,7 @@ ZREVRANGE jobs:views:ranking 0 4 WITHSCORES
 
 ---
 
-## 🔴 Redis Tools & Monitoring
+## Redis Tools & Monitoring
 
 ### 1. Redis Commander (GUI) 🎨
 
@@ -516,7 +516,7 @@ wrk -t4 -c100 -d30s http://localhost:5058/api/v1/jobs/11111111-1111-1111-1111-11
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 JobBoardApi/
@@ -559,7 +559,7 @@ JobBoardApi/
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 ### appsettings.json
 ```json
@@ -619,7 +619,7 @@ redis-19999.c123.us-east-1-2.ec2.cloud.redislabs.com:19999,password=your-passwor
 
 ---
 
-## 💻 Development
+## Development
 
 ### Local Setup
 
@@ -683,7 +683,7 @@ dotnet build
 
 ---
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Issue: "Redis connection refused"
 
@@ -793,7 +793,7 @@ docker-compose logs --tail=50
 
 ---
 
-## 🚀 Performance Optimization Tips
+## Performance Optimization Tips
 
 ### Redis Tuning
 ```redis
@@ -815,7 +815,7 @@ INFO clients
 
 ---
 
-## 📚 Learning Resources
+## Learning Resources
 
 ### Redis Documentation
 - [Redis Commands](https://redis.io/commands/)
@@ -834,7 +834,7 @@ INFO clients
 
 ---
 
-## 📋 Sample Workflow
+## Sample Workflow
 
 ### Complete Scenario: View Job Rankings
 
@@ -866,7 +866,7 @@ docker-compose down
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please:
 
@@ -884,13 +884,13 @@ Contributions are welcome! Please:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 🎯 Next Steps
+## Next Steps
 
 ### For Beginners
 1. ✅ Run with `docker-compose up`
@@ -907,7 +907,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ---
 
-## 📞 Support
+## Support
 
 For issues and questions:
 - 📝 Check [Troubleshooting](#troubleshooting) section
